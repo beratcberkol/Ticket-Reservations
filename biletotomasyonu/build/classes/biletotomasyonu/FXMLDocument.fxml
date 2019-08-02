@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="obus.AnaController">
+  <tabs>
+      <Tab text="Anasayfa">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="176.0" fitWidth="330.0" layoutX="155.0" layoutY="118.0">
+                     <image>
+                        <Image url="@images/welcome.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="147.0" layoutY="266.0" prefHeight="122.0" prefWidth="267.0" />
+                  <ImageView fitHeight="123.0" fitWidth="451.0" layoutX="103.0" layoutY="273.0">
+                     <image>
+                        <Image url="@images/bus3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="110.0" fitWidth="513.0" layoutX="64.0" layoutY="28.0">
+                     <image>
+                        <Image url="@images/bus1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+    <Tab text="Bilet Al">
+      <content>
+        <AnchorPane prefHeight="463.0" prefWidth="649.0">
+               <children>
+                  <ChoiceBox fx:id="biletal_cinsiyet_cmb" layoutX="198.0" layoutY="103.0" prefHeight="27.0" prefWidth="165.0" />
+                  <Label alignment="TOP_CENTER" layoutX="46.0" layoutY="33.0" text="Ad Soyad:" textAlignment="CENTER" />
+                  <Label alignment="TOP_CENTER" layoutX="46.0" layoutY="71.0" text="T.C. No:" textAlignment="CENTER" />
+                  <Label alignment="TOP_CENTER" layoutX="45.0" layoutY="108.0" text="Cinsiyet:" textAlignment="CENTER" />
+                  <Label alignment="TOP_CENTER" layoutX="43.0" layoutY="143.0" text="Nereden:" textAlignment="CENTER" />
+                  <Label alignment="TOP_CENTER" layoutX="46.0" layoutY="176.0" text="Nereye:" textAlignment="CENTER" />
+                  <Separator layoutX="-3.0" layoutY="46.0" prefHeight="20.0" prefWidth="200.0" />
+                  <Separator layoutX="-3.0" layoutY="83.0" prefHeight="20.0" prefWidth="200.0" />
+                  <Separator layoutX="-1.0" layoutY="120.0" prefHeight="20.0" prefWidth="200.0" />
+                  <Separator layoutX="-1.0" layoutY="155.0" prefHeight="20.0" prefWidth="200.0" />
+                  <TextField fx:id="biletal_adsoyad" layoutX="197.0" layoutY="29.0" prefHeight="22.0" prefWidth="164.0" />
+                  <TextField fx:id="biletal_tc" layoutX="197.0" layoutY="66.0" prefHeight="22.0" prefWidth="164.0" />
+                  <ChoiceBox fx:id="biletal_nereden_cmb" layoutX="198.0" layoutY="138.0" prefHeight="27.0" prefWidth="165.0" />
+                  <ChoiceBox fx:id="biletal_nereye_cmb" layoutX="198.0" layoutY="171.0" prefHeight="27.0" prefWidth="165.0" />
+                  <Separator layoutX="-1.0" layoutY="188.0" prefHeight="20.0" prefWidth="200.0" />
+                  <Label alignment="TOP_CENTER" layoutX="44.0" layoutY="209.0" text="Tarih:" textAlignment="CENTER" />
+                  <DatePicker fx:id="biletal_tarih" layoutX="197.0" layoutY="204.0" prefHeight="27.0" prefWidth="166.0" />
+                  <Separator layoutX="-2.0" layoutY="221.0" prefHeight="20.0" prefWidth="200.0" />
+                  <ImageView fitHeight="104.0" fitWidth="124.0" layoutX="415.0" layoutY="41.0">
+                     <image>
+                        <Image url="@images/bus.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="bilet_ara" layoutX="418.0" layoutY="55.0" mnemonicParsing="false" onAction="#biletal_biletara" opacity="0.0" prefHeight="76.0" prefWidth="118.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="biletal11" layoutX="407.0" layoutY="216.0" mnemonicParsing="false" onAction="#biletal_biletal1" prefHeight="51.0" prefWidth="94.0" text="Bilet Satın Al" visible="false" />
+                  <Button fx:id="biletal" layoutX="407.0" layoutY="216.0" mnemonicParsing="false" onAction="#biletal_biletal" prefHeight="51.0" prefWidth="94.0" text="Bilet Satın Al" visible="false" />
+                  <CheckBox fx:id="seat4" layoutX="45.0" layoutY="278.0" mnemonicParsing="false" text="4" visible="false" />
+                  <Circle fx:id="biletal_s4circle" fill="#00b912" layoutX="32.0" layoutY="286.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s3circle" fill="#00b912" layoutX="31.0" layoutY="315.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat3" layoutX="44.0" layoutY="307.0" mnemonicParsing="false" text="3" visible="false" />
+                  <CheckBox fx:id="seat1" layoutX="44.0" layoutY="389.0" mnemonicParsing="false" text="1" visible="false" />
+                  <Circle fx:id="biletal_s1circle" fill="#00b912" layoutX="31.0" layoutY="397.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s2circle" fill="#00b912" layoutX="32.0" layoutY="368.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat2" layoutX="45.0" layoutY="360.0" mnemonicParsing="false" text="2" visible="false" />
+                  <CheckBox fx:id="seat6" layoutX="98.0" layoutY="360.0" mnemonicParsing="false" text="6" visible="false" />
+                  <Circle fx:id="biletal_s6circle" fill="#00b912" layoutX="85.0" layoutY="368.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s5circle" fill="#00b912" layoutX="84.0" layoutY="397.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat5" layoutX="97.0" layoutY="389.0" mnemonicParsing="false" text="5" visible="false" />
+                  <CheckBox fx:id="seat7" layoutX="97.0" layoutY="307.0" mnemonicParsing="false" text="7" visible="false" />
+                  <Circle fx:id="biletal_s7circle" fill="#00b912" layoutX="84.0" layoutY="315.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s8circle" fill="#00b912" layoutX="85.0" layoutY="286.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat8" layoutX="98.0" layoutY="278.0" mnemonicParsing="false" text="8" visible="false" />
+                  <CheckBox fx:id="seat16" layoutX="210.0" layoutY="278.0" mnemonicParsing="false" text="16" visible="false" />
+                  <Circle fx:id="biletal_s16circle" fill="#00b912" layoutX="197.0" layoutY="286.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s15circle" fill="#00b912" layoutX="196.0" layoutY="315.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat15" layoutX="209.0" layoutY="307.0" mnemonicParsing="false" text="15" visible="false" />
+                  <CheckBox fx:id="seat13" layoutX="209.0" layoutY="389.0" mnemonicParsing="false" text="13" visible="false" />
+                  <Circle fx:id="biletal_s13circle" fill="#00b912" layoutX="196.0" layoutY="397.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s14circle" fill="#00b912" layoutX="197.0" layoutY="368.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat14" layoutX="210.0" layoutY="360.0" mnemonicParsing="false" text="14" visible="false" />
+                  <CheckBox fx:id="seat10" layoutX="151.0" layoutY="360.0" mnemonicParsing="false" text="10" visible="false" />
+                  <Circle fx:id="biletal_s10circle" fill="#00b912" layoutX="138.0" layoutY="368.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s9circle" fill="#00b912" layoutX="137.0" layoutY="397.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat9" layoutX="150.0" layoutY="389.0" mnemonicParsing="false" text="9" visible="false" />
+                  <CheckBox fx:id="seat11" layoutX="150.0" layoutY="307.0" mnemonicParsing="false" text="11" visible="false" />
+                  <Circle fx:id="biletal_s11circle" fill="#00b912" layoutX="137.0" layoutY="315.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s12circle" fill="#00b912" layoutX="138.0" layoutY="286.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat12" layoutX="151.0" layoutY="278.0" mnemonicParsing="false" text="12" visible="false" />
+                  <CheckBox fx:id="seat25" layoutX="388.0" layoutY="388.0" mnemonicParsing="false" text="25" visible="false" />
+                  <Circle fx:id="biletal_s25circle" fill="#00b912" layoutX="375.0" layoutY="398.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s26circle" fill="#00b912" layoutX="376.0" layoutY="368.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat26" layoutX="389.0" layoutY="360.0" mnemonicParsing="false" text="26" visible="false" />
+                  <CheckBox fx:id="seat28" layoutX="454.0" layoutY="360.0" mnemonicParsing="false" text="28" visible="false" />
+                  <Circle fx:id="biletal_s28circle" fill="#00b912" layoutX="441.0" layoutY="368.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s27circle" fill="#00b912" layoutX="440.0" layoutY="397.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat27" layoutX="453.0" layoutY="389.0" mnemonicParsing="false" text="27" visible="false" />
+                  <CheckBox fx:id="seat29" layoutX="453.0" layoutY="307.0" mnemonicParsing="false" text="29" visible="false" />
+                  <Circle fx:id="biletal_s29circle" fill="#00b912" layoutX="440.0" layoutY="315.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s30circle" fill="#00b912" layoutX="441.0" layoutY="286.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat30" layoutX="454.0" layoutY="278.0" mnemonicParsing="false" text="30" visible="false" />
+                  <CheckBox fx:id="seat24" layoutX="327.0" layoutY="278.0" mnemonicParsing="false" text="24" visible="false" />
+                  <Circle fx:id="biletal_s24circle" fill="#00b912" layoutX="314.0" layoutY="286.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s23circle" fill="#00b912" layoutX="313.0" layoutY="315.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat23" layoutX="326.0" layoutY="307.0" mnemonicParsing="false" text="23" visible="false" />
+                  <CheckBox fx:id="seat21" layoutX="326.0" layoutY="389.0" mnemonicParsing="false" text="21" visible="false" />
+                  <Circle fx:id="biletal_s21circle" fill="#00b912" layoutX="313.0" layoutY="397.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s22circle" fill="#00b912" layoutX="314.0" layoutY="368.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat22" layoutX="327.0" layoutY="360.0" mnemonicParsing="false" text="22" visible="false" />
+                  <CheckBox fx:id="seat18" layoutX="268.0" layoutY="360.0" mnemonicParsing="false" text="18" visible="false" />
+                  <Circle fx:id="biletal_s18circle" fill="#00b912" layoutX="255.0" layoutY="368.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s17circle" fill="#00b912" layoutX="254.0" layoutY="397.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat17" layoutX="267.0" layoutY="389.0" mnemonicParsing="false" text="17" visible="false" />
+                  <CheckBox fx:id="seat19" layoutX="267.0" layoutY="307.0" mnemonicParsing="false" text="19" visible="false" />
+                  <Circle fx:id="biletal_s19circle" fill="#00b912" layoutX="254.0" layoutY="315.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s20circle" fill="#00b912" layoutX="255.0" layoutY="286.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat20" layoutX="268.0" layoutY="278.0" mnemonicParsing="false" text="20" visible="false" />
+                  <CheckBox fx:id="seat38" layoutX="585.0" layoutY="278.0" mnemonicParsing="false" text="38" visible="false" />
+                  <Circle fx:id="biletal_s38circle" fill="#00b912" layoutX="572.0" layoutY="286.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s37circle" fill="#00b912" layoutX="571.0" layoutY="315.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat37" layoutX="584.0" layoutY="307.0" mnemonicParsing="false" text="37" visible="false" />
+                  <CheckBox fx:id="seat35" layoutX="584.0" layoutY="389.0" mnemonicParsing="false" text="35" visible="false" />
+                  <Circle fx:id="biletal_s35circle" fill="#00b912" layoutX="571.0" layoutY="397.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s36circle" fill="#00b912" layoutX="572.0" layoutY="368.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat36" layoutX="585.0" layoutY="360.0" mnemonicParsing="false" text="36" visible="false" />
+                  <CheckBox fx:id="seat32" layoutX="519.0" layoutY="360.0" mnemonicParsing="false" text="32" visible="false" />
+                  <Circle fx:id="biletal_s32circle" fill="#00b912" layoutX="506.0" layoutY="368.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s31circle" fill="#00b912" layoutX="505.0" layoutY="397.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat31" layoutX="518.0" layoutY="389.0" mnemonicParsing="false" text="31" visible="false" />
+                  <CheckBox fx:id="seat33" layoutX="518.0" layoutY="307.0" mnemonicParsing="false" text="33" visible="false" />
+                  <Circle fx:id="biletal_s33circle" fill="#00b912" layoutX="505.0" layoutY="315.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="biletal_s34circle" fill="#00b912" layoutX="506.0" layoutY="286.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <CheckBox fx:id="seat34" layoutX="519.0" layoutY="278.0" mnemonicParsing="false" text="34" visible="false" />
+                  <Rectangle fx:id="biletal_kapi" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="14.0" layoutX="371.0" layoutY="279.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="44.0" />
+                  <ChoiceBox fx:id="biletal_firma_cmb" layoutX="197.0" layoutY="239.0" prefHeight="27.0" prefWidth="168.0" />
+                  <Label layoutX="45.0" layoutY="245.0" text="Firma" />
+               </children>
+               <effect>
+                  <Glow />
+               </effect></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Bilet İptal">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="46.0" layoutY="119.0" text="T.C. No:" />
+                  <TextField fx:id="biletiptal_tc" layoutX="160.0" layoutY="115.0" />
+                  <Label layoutX="46.0" layoutY="229.0" text="TC. Kimlik numaranızı girmelisiniz." textFill="#fc0303">
+                     <font>
+                        <Font name="Arial Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="24.0" fitWidth="26.0" layoutX="14.0" layoutY="223.0">
+                     <image>
+                        <Image url="@images/warning.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="biletiptal_iptalet" layoutX="259.0" layoutY="161.0" mnemonicParsing="false" onAction="#iptalet" text="İptal Et" />
+                  <ImageView fitHeight="156.0" fitWidth="246.0" layoutX="352.0" layoutY="59.0">
+                     <image>
+                        <Image url="@images/cancelreservation.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Biletlerim">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="49.0" layoutY="116.0" text="T.C. No:" />
+                  <TextField fx:id="biletlerim_tc" layoutX="117.0" layoutY="112.0" />
+                  <Label layoutX="49.0" layoutY="265.0" />
+                  <Label layoutX="92.0" layoutY="205.0" text="TC Kimlik numaranızı girmelisiniz." textFill="#fc0303">
+                     <font>
+                        <Font name="Arial Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="280.0" layoutY="77.0" mnemonicParsing="false" onAction="#biletara" prefHeight="97.0" prefWidth="99.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ImageView fitHeight="22.0" fitWidth="21.0" layoutX="61.0" layoutY="199.0">
+                     <image>
+                        <Image url="@images/warning.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="180.0" fitWidth="200.0" layoutX="405.0" layoutY="44.0">
+                     <image>
+                        <Image url="@images/travel1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="169.0" fitWidth="369.0" layoutX="136.0" layoutY="258.0">
+                     <image>
+                        <Image url="@images/travel2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="95.0" fitWidth="99.0" layoutX="282.0" layoutY="77.0">
+                     <image>
+                        <Image url="@images/search.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Bize Ulaşın">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="66.0" layoutY="55.0" text="Dilek ve görüşleriniz bizim için önemlidir.">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Label>
+                  <TextArea fx:id="bizeulas_mesaj" layoutX="66.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" />
+                  <Button fx:id="bizeulas_gonder" layoutX="213.0" layoutY="319.0" mnemonicParsing="false" onAction="#gonder_bizeulas" text="Gönder" />
+                  <ImageView fitHeight="99.0" fitWidth="258.0" layoutX="343.0" layoutY="86.0">
+                     <image>
+                        <Image url="@images/contact1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
